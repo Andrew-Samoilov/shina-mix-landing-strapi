@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_nav_bar_nav_bars",
+  "info": {
+    "displayName": "NavBar"
+  },
+  "options": {},
+  "attributes": {
+    "SMLogo": {
+      "displayName": "Logo",
+      "type": "component",
+      "repeatable": true,
+      "component": "logo.logo"
+    }
+  }
+}
