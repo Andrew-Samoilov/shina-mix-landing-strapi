@@ -1,7 +1,8 @@
 {
   "collectionName": "components_components_feautures",
   "info": {
-    "displayName": "feauture"
+    "displayName": "feature",
+    "description": ""
   },
   "options": {},
   "attributes": {

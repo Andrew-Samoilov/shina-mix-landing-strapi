@@ -1,19 +1,10 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ComponentsBenefit extends Struct.ComponentSchema {
-  collectionName: 'components_components_benefits';
-  info: {
-    displayName: 'Benefit';
-  };
-  attributes: {
-    feauture: Schema.Attribute.Component<'components.feauture', true>;
-  };
-}
-
 export interface ComponentsFeauture extends Struct.ComponentSchema {
   collectionName: 'components_components_feautures';
   info: {
-    displayName: 'feauture';
+    description: '';
+    displayName: 'feature';
   };
   attributes: {
     header: Schema.Attribute.String;
@@ -39,11 +30,11 @@ export interface LayoutBenefitsSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_benefits_sections';
   info: {
     description: '';
-    displayName: 'Benefits Section';
+    displayName: 'Features Section';
   };
   attributes: {
-    benefit: Schema.Attribute.Component<'components.benefit', true>;
     description: Schema.Attribute.Text;
+    feature: Schema.Attribute.Component<'components.feauture', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -65,7 +56,6 @@ export interface LayoutHeroSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'components.benefit': ComponentsBenefit;
       'components.feauture': ComponentsFeauture;
       'components.link': ComponentsLink;
       'layout.benefits-section': LayoutBenefitsSection;

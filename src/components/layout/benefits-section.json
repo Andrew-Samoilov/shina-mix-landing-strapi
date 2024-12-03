@@ -1,7 +1,7 @@
 {
   "collectionName": "components_layout_benefits_sections",
   "info": {
-    "displayName": "Benefits Section",
+    "displayName": "Features Section",
     "description": ""
   },
   "options": {},
@@ -12,10 +12,10 @@
     "description": {
       "type": "text"
     },
-    "benefit": {
+    "feature": {
       "type": "component",
       "repeatable": true,
-      "component": "components.benefit"
+      "component": "components.feauture"
     }
   }
 }
