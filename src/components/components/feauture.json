@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_feautures",
+  "info": {
+    "displayName": "feauture"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "header": {
+      "type": "string"
+    },
+    "subHeader": {
+      "type": "string"
+    }
+  }
+}
