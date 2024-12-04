@@ -13,6 +13,17 @@ export interface ComponentsLink extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutBenefitsSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_benefits_sections';
+  info: {
+    displayName: 'Benefits Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutFeaturesSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_features_sections';
   info: {
@@ -43,6 +54,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'components.link': ComponentsLink;
+      'layout.benefits-section': LayoutBenefitsSection;
       'layout.features-section': LayoutFeaturesSection;
       'layout.hero-section': LayoutHeroSection;
     }

@@ -382,7 +382,11 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['layout.hero-section', 'layout.features-section']
+      [
+        'layout.hero-section',
+        'layout.features-section',
+        'layout.benefits-section',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
