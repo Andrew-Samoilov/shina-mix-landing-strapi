@@ -22,7 +22,7 @@
       "type": "dynamiczone",
       "components": [
         "layout.hero-section",
-        "layout.benefits-section"
+        "layout.features-section"
       ]
     }
   }
