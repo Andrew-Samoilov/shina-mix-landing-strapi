@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_components_iutuashe",
+  "info": {
+    "displayName": "Иутуаше"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -11,6 +11,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "feature": {
+      "displayName": "Feauture",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.feauture"
     }
   }
 }
