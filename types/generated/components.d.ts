@@ -15,7 +15,8 @@ export interface ComponentsFeauture extends Struct.ComponentSchema {
 export interface ComponentsIutuashe extends Struct.ComponentSchema {
   collectionName: 'components_components_iutuashe';
   info: {
-    displayName: '\u0418\u0443\u0442\u0443\u0430\u0448\u0435';
+    description: '';
+    displayName: 'Benefit';
   };
   attributes: {
     title: Schema.Attribute.String;
@@ -32,6 +33,16 @@ export interface ComponentsLink extends Struct.ComponentSchema {
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     text: Schema.Attribute.String;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsLogoTxt extends Struct.ComponentSchema {
+  collectionName: 'components_components_logo_txts';
+  info: {
+    displayName: 'logoTxt';
+  };
+  attributes: {
+    logoTxt: Schema.Attribute.Component<'components.link', true>;
   };
 }
 
@@ -61,6 +72,32 @@ export interface LayoutFeaturesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutFooter extends Struct.ComponentSchema {
+  collectionName: 'components_layout_footers';
+  info: {
+    description: '';
+    displayName: 'Footer';
+  };
+  attributes: {
+    logoText: Schema.Attribute.Component<'components.link', false>;
+    menu: Schema.Attribute.String;
+    socialLinks: Schema.Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface LayoutHeader extends Struct.ComponentSchema {
+  collectionName: 'components_layout_headers';
+  info: {
+    description: '';
+    displayName: 'Header';
+  };
+  attributes: {
+    ctaButton: Schema.Attribute.Component<'components.link', false>;
+    logoText: Schema.Attribute.Component<'components.link', false>;
+    Menu: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_hero_sections';
   info: {
@@ -81,8 +118,11 @@ declare module '@strapi/strapi' {
       'components.feauture': ComponentsFeauture;
       'components.iutuashe': ComponentsIutuashe;
       'components.link': ComponentsLink;
+      'components.logo-txt': ComponentsLogoTxt;
       'layout.benefits-section': LayoutBenefitsSection;
       'layout.features-section': LayoutFeaturesSection;
+      'layout.footer': LayoutFooter;
+      'layout.header': LayoutHeader;
       'layout.hero-section': LayoutHeroSection;
     }
   }

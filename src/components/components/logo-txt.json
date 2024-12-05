@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_components_logo_txts",
+  "info": {
+    "displayName": "logoTxt"
+  },
+  "options": {},
+  "attributes": {
+    "logoTxt": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    }
+  }
+}
