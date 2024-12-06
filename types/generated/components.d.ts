@@ -112,6 +112,17 @@ export interface LayoutHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutPriceSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_price_sections';
+  info: {
+    displayName: 'Price Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    text: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -124,6 +135,7 @@ declare module '@strapi/strapi' {
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
       'layout.hero-section': LayoutHeroSection;
+      'layout.price-section': LayoutPriceSection;
     }
   }
 }

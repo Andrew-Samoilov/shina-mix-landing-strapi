@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_price_sections",
+  "info": {
+    "displayName": "Price Section"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

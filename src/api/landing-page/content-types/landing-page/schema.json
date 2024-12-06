@@ -23,7 +23,8 @@
       "components": [
         "layout.hero-section",
         "layout.features-section",
-        "layout.benefits-section"
+        "layout.benefits-section",
+        "layout.price-section"
       ]
     }
   }
