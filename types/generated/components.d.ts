@@ -59,6 +59,18 @@ export interface LayoutBenefitsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutContactSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_contact_sections';
+  info: {
+    displayName: 'Contact Section';
+    icon: 'phone';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutFeaturesSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_features_sections';
   info: {
@@ -115,11 +127,13 @@ export interface LayoutHeroSection extends Struct.ComponentSchema {
 export interface LayoutPriceSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_price_sections';
   info: {
+    description: '';
     displayName: 'Price Section';
+    icon: 'priceTag';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    text: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -131,6 +145,7 @@ declare module '@strapi/strapi' {
       'components.link': ComponentsLink;
       'components.logo-txt': ComponentsLogoTxt;
       'layout.benefits-section': LayoutBenefitsSection;
+      'layout.contact-section': LayoutContactSection;
       'layout.features-section': LayoutFeaturesSection;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;

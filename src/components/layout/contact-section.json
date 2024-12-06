@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_layout_price_sections",
+  "collectionName": "components_layout_contact_sections",
   "info": {
-    "displayName": "Price Section",
-    "description": "",
-    "icon": "priceTag"
+    "displayName": "Contact Section",
+    "icon": "phone"
   },
   "options": {},
   "attributes": {

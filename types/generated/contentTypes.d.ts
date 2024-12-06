@@ -419,6 +419,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'layout.features-section',
         'layout.benefits-section',
         'layout.price-section',
+        'layout.contact-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

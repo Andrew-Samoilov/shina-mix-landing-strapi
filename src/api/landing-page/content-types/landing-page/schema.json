@@ -24,7 +24,8 @@
         "layout.hero-section",
         "layout.features-section",
         "layout.benefits-section",
-        "layout.price-section"
+        "layout.price-section",
+        "layout.contact-section"
       ]
     }
   }
