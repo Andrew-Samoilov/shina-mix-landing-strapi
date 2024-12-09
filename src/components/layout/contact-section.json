@@ -2,7 +2,8 @@
   "collectionName": "components_layout_contact_sections",
   "info": {
     "displayName": "Contact Section",
-    "icon": "phone"
+    "icon": "phone",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,18 @@
     },
     "description": {
       "type": "text"
+    },
+    "destination": {
+      "type": "text"
+    },
+    "destinationTitle": {
+      "type": "string"
+    },
+    "contact": {
+      "displayName": "Contact",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.contact"
     }
   }
 }

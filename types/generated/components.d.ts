@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsContact extends Struct.ComponentSchema {
+  collectionName: 'components_components_contacts';
+  info: {
+    displayName: 'Contact';
+  };
+  attributes: {
+    img: Schema.Attribute.Media<'images'>;
+    link: Schema.Attribute.Component<'components.link', false>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsFeauture extends Struct.ComponentSchema {
   collectionName: 'components_components_feautures';
   info: {
@@ -62,11 +74,15 @@ export interface LayoutBenefitsSection extends Struct.ComponentSchema {
 export interface LayoutContactSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_contact_sections';
   info: {
+    description: '';
     displayName: 'Contact Section';
     icon: 'phone';
   };
   attributes: {
+    contact: Schema.Attribute.Component<'components.contact', true>;
     description: Schema.Attribute.Text;
+    destination: Schema.Attribute.Text;
+    destinationTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -140,6 +156,7 @@ export interface LayoutPriceSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.contact': ComponentsContact;
       'components.feauture': ComponentsFeauture;
       'components.iutuashe': ComponentsIutuashe;
       'components.link': ComponentsLink;
