@@ -3,10 +3,11 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ComponentsContact extends Struct.ComponentSchema {
   collectionName: 'components_components_contacts';
   info: {
+    description: '';
     displayName: 'Contact';
   };
   attributes: {
-    img: Schema.Attribute.Media<'images'>;
+    icon: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'components.link', false>;
     name: Schema.Attribute.String;
   };
