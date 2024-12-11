@@ -21,6 +21,12 @@
       "type": "component",
       "repeatable": false,
       "component": "components.link"
+    },
+    "destination": {
+      "type": "text"
+    },
+    "destinationTitle": {
+      "type": "string"
     }
   }
 }

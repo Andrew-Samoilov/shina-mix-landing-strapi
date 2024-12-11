@@ -7,6 +7,8 @@ export interface ComponentsContact extends Struct.ComponentSchema {
     displayName: 'Contact';
   };
   attributes: {
+    destination: Schema.Attribute.Text;
+    destinationTitle: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'components.link', false>;
     name: Schema.Attribute.String;
@@ -82,8 +84,6 @@ export interface LayoutContactSection extends Struct.ComponentSchema {
   attributes: {
     contact: Schema.Attribute.Component<'components.contact', true>;
     description: Schema.Attribute.Text;
-    destination: Schema.Attribute.Text;
-    destinationTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }

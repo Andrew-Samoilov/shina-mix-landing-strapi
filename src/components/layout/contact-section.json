@@ -13,12 +13,6 @@
     "description": {
       "type": "text"
     },
-    "destination": {
-      "type": "text"
-    },
-    "destinationTitle": {
-      "type": "string"
-    },
     "contact": {
       "displayName": "Contact",
       "type": "component",
