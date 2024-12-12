@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_sert_sections",
+  "info": {
+    "displayName": "Sert Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sert": {
+      "displayName": "sert",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.sert"
+    }
+  }
+}

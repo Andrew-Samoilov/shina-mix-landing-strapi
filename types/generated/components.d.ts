@@ -61,6 +61,18 @@ export interface ComponentsLogoTxt extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsSert extends Struct.ComponentSchema {
+  collectionName: 'components_components_serts';
+  info: {
+    description: '';
+    displayName: 'sert';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutBenefitsSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_benefits_sections';
   info: {
@@ -154,6 +166,18 @@ export interface LayoutPriceSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutSertSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_sert_sections';
+  info: {
+    description: '';
+    displayName: 'Sert Section';
+  };
+  attributes: {
+    sert: Schema.Attribute.Component<'components.sert', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -162,6 +186,7 @@ declare module '@strapi/strapi' {
       'components.iutuashe': ComponentsIutuashe;
       'components.link': ComponentsLink;
       'components.logo-txt': ComponentsLogoTxt;
+      'components.sert': ComponentsSert;
       'layout.benefits-section': LayoutBenefitsSection;
       'layout.contact-section': LayoutContactSection;
       'layout.features-section': LayoutFeaturesSection;
@@ -169,6 +194,7 @@ declare module '@strapi/strapi' {
       'layout.header': LayoutHeader;
       'layout.hero-section': LayoutHeroSection;
       'layout.price-section': LayoutPriceSection;
+      'layout.sert-section': LayoutSertSection;
     }
   }
 }
