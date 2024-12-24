@@ -11,9 +11,6 @@
       "repeatable": false,
       "component": "components.link"
     },
-    "menu": {
-      "type": "string"
-    },
     "socialLinks": {
       "type": "component",
       "repeatable": true,

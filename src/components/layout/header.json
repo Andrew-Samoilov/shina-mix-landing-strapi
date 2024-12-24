@@ -10,14 +10,6 @@
       "type": "component",
       "repeatable": false,
       "component": "components.link"
-    },
-    "ctaButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.link"
-    },
-    "Menu": {
-      "type": "string"
     }
   }
 }

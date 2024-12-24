@@ -121,7 +121,6 @@ export interface LayoutFooter extends Struct.ComponentSchema {
   };
   attributes: {
     logoText: Schema.Attribute.Component<'components.link', false>;
-    menu: Schema.Attribute.String;
     socialLinks: Schema.Attribute.Component<'components.link', true>;
   };
 }
@@ -133,9 +132,7 @@ export interface LayoutHeader extends Struct.ComponentSchema {
     displayName: 'Header';
   };
   attributes: {
-    ctaButton: Schema.Attribute.Component<'components.link', false>;
     logoText: Schema.Attribute.Component<'components.link', false>;
-    Menu: Schema.Attribute.String;
   };
 }
 
