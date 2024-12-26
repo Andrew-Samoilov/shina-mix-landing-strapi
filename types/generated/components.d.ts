@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsBrand extends Struct.ComponentSchema {
+  collectionName: 'components_components_brands';
+  info: {
+    displayName: 'Brand';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsContact extends Struct.ComponentSchema {
   collectionName: 'components_components_contacts';
   info: {
@@ -61,6 +72,26 @@ export interface ComponentsLogoTxt extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsMenu extends Struct.ComponentSchema {
+  collectionName: 'components_components_menus';
+  info: {
+    displayName: 'menu';
+  };
+  attributes: {
+    menuItem: Schema.Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface ComponentsMenuItems extends Struct.ComponentSchema {
+  collectionName: 'components_components_menu_items';
+  info: {
+    displayName: 'menuItems';
+  };
+  attributes: {
+    menuItem: Schema.Attribute.Component<'components.link', false>;
+  };
+}
+
 export interface ComponentsSert extends Struct.ComponentSchema {
   collectionName: 'components_components_serts';
   info: {
@@ -82,6 +113,18 @@ export interface LayoutBenefitsSection extends Struct.ComponentSchema {
   attributes: {
     benefit: Schema.Attribute.Component<'components.iutuashe', true>;
     description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutBrendsSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_brends_sections';
+  info: {
+    description: '';
+    displayName: 'Brands Section';
+  };
+  attributes: {
+    brand: Schema.Attribute.Component<'components.brand', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -133,6 +176,7 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   };
   attributes: {
     logoText: Schema.Attribute.Component<'components.link', false>;
+    menuItems: Schema.Attribute.Component<'components.link', true>;
   };
 }
 
@@ -178,13 +222,17 @@ export interface LayoutSertSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.brand': ComponentsBrand;
       'components.contact': ComponentsContact;
       'components.feauture': ComponentsFeauture;
       'components.iutuashe': ComponentsIutuashe;
       'components.link': ComponentsLink;
       'components.logo-txt': ComponentsLogoTxt;
+      'components.menu': ComponentsMenu;
+      'components.menu-items': ComponentsMenuItems;
       'components.sert': ComponentsSert;
       'layout.benefits-section': LayoutBenefitsSection;
+      'layout.brends-section': LayoutBrendsSection;
       'layout.contact-section': LayoutContactSection;
       'layout.features-section': LayoutFeaturesSection;
       'layout.footer': LayoutFooter;

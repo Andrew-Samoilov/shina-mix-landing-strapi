@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_components_menu_items",
+  "info": {
+    "displayName": "menuItems"
+  },
+  "options": {},
+  "attributes": {
+    "menuItem": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}
