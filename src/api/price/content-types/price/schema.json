@@ -21,6 +21,10 @@
     "message": {
       "type": "text"
     },
+    "emailSent": {
+      "type": "boolean",
+      "default": false
+    },
     "added": {
       "type": "boolean"
     }
