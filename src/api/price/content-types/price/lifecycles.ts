@@ -3,6 +3,7 @@ export default {
         const { result } = event;
 
         strapi.log.info(`Запис створено: ID ${result.id}, Час: ${new Date().toISOString()}`);
+        // console.dir(result);
 
         if (result.emailSent) {
             strapi.log.info(`Лист уже був відправлений для ID: ${result.id}`);
@@ -12,9 +13,15 @@ export default {
         try {
             await strapi.plugin('email').service('email').send({
                 to: 'webmaster@shinamix.com',
-                subject: 'Новий запис у Price',
-                text: `Новий запис створено: ${JSON.stringify(result)}`,
-                html: `<p>Новий запис у Price: <strong>${result.title || 'Без назви'}</strong></p>`,
+                subject: `Новий запит на Price. ${result.createdAt}`,
+                text: `Новий запит:`,
+                html: `
+                <h1>Новий запит на Price:</h1>
+                <p>email: ${result.eMail},</p>
+                <p>name: ${result.name},</p>
+                <p>message: ${result.message},</p>
+                <div style="text-align: right;">createdAt: ${result.createdAt}</div>
+                `,
             });
 
             strapi.log.info(`Email успішно надіслано для ID: ${result.id}`);
