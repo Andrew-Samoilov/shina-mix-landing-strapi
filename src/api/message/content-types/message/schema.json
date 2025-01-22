@@ -22,6 +22,10 @@
     },
     "contact_message": {
       "type": "text"
+    },
+    "emailSent": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

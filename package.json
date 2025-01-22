@@ -1,6 +1,6 @@
 {
   "name": "shina-mix-landing-strapi",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "private": true,
   "description": "Shina Mix Strapi application",
   "scripts": {
@@ -17,6 +17,7 @@
     "@strapi/provider-email-nodemailer": "^5.8.0",
     "@strapi/strapi": "latest",
     "better-sqlite3": "11.3.0",
+    "date-fns": "^2.30.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
