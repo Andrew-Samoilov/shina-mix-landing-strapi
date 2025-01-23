@@ -19,14 +19,8 @@
     },
     "link": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "components.link"
-    },
-    "destination": {
-      "type": "text"
-    },
-    "destinationTitle": {
-      "type": "string"
     }
   }
 }

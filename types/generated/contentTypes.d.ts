@@ -422,6 +422,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'layout.contact-section',
         'layout.sert-section',
         'layout.brends-section',
+        'components.contact',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

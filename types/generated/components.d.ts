@@ -1,5 +1,28 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsAddress extends Struct.ComponentSchema {
+  collectionName: 'components_components_addresses';
+  info: {
+    description: '';
+    displayName: 'address';
+  };
+  attributes: {
+    destination: Schema.Attribute.Text;
+    destinationTitle: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsAdress extends Struct.ComponentSchema {
+  collectionName: 'components_components_adresses';
+  info: {
+    displayName: 'adress';
+  };
+  attributes: {
+    destination: Schema.Attribute.Text;
+    destinationTitle: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsBrand extends Struct.ComponentSchema {
   collectionName: 'components_components_brands';
   info: {
@@ -18,10 +41,8 @@ export interface ComponentsContact extends Struct.ComponentSchema {
     displayName: 'Contact';
   };
   attributes: {
-    destination: Schema.Attribute.Text;
-    destinationTitle: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images'>;
-    link: Schema.Attribute.Component<'components.link', false>;
+    link: Schema.Attribute.Component<'components.link', true>;
     name: Schema.Attribute.String;
   };
 }
@@ -137,6 +158,7 @@ export interface LayoutContactSection extends Struct.ComponentSchema {
     icon: 'phone';
   };
   attributes: {
+    address: Schema.Attribute.Component<'components.address', true>;
     contact: Schema.Attribute.Component<'components.contact', true>;
     description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
@@ -222,6 +244,8 @@ export interface LayoutSertSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.address': ComponentsAddress;
+      'components.adress': ComponentsAdress;
       'components.brand': ComponentsBrand;
       'components.contact': ComponentsContact;
       'components.feauture': ComponentsFeauture;

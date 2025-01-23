@@ -18,6 +18,12 @@
       "type": "component",
       "repeatable": true,
       "component": "components.contact"
+    },
+    "address": {
+      "displayName": "address",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.address"
     }
   }
 }

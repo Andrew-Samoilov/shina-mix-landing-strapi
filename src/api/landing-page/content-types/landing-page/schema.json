@@ -27,7 +27,8 @@
         "layout.price-section",
         "layout.contact-section",
         "layout.sert-section",
-        "layout.brends-section"
+        "layout.brends-section",
+        "components.contact"
       ]
     }
   }
