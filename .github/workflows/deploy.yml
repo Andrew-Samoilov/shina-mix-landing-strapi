@@ -23,9 +23,12 @@ jobs:
       - name: Deploy and Restart Services
         run: |
           ssh root@38.242.214.198 "
+             export NVM_DIR=~/.nvm;
+            source ~/.nvm/nvm.sh;
+            export PATH=/root/.nvm/versions/node/v20.18.1/bin:$PATH;
             cd /var/www/shina-mix-landing/back &&
             git pull origin main &&
-            /root/.nvm/versions/node/v20.18.1/bin/npm install --production &&
-            /root/.nvm/versions/node/v20.18.1/bin/npm run build &&
+            npm install --production &&
+            npm run build &&
             pm2 restart strapi
           "
