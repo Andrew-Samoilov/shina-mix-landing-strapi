@@ -1,0 +1,31 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan 38.242.214.198 >> ~/.ssh/known_hosts
+
+      - name: Deploy and Restart Services
+        run: |
+          ssh root@38.242.214.198 "
+            cd /var/www/shina-mix-landing/back &&
+            git pull origin main &&
+            npm install --production &&
+            npm run build &&
+            pm2 restart strapi
+          "
