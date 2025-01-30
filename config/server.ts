@@ -13,4 +13,7 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS', [key1, key2]),
   },
+
+  url: env('PUBLIC_URL', 'https://shinamix.com'),
+  
 });

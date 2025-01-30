@@ -28,7 +28,7 @@ jobs:
             export PATH=/root/.nvm/versions/node/v20.18.1/bin:$PATH;
             cd /var/www/shina-mix-landing/back &&
             git pull origin main &&
-            npm install --production &&
+            npm install --omit=dev &&
             npm run build &&
             pm2 restart strapi
           "
