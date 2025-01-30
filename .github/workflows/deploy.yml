@@ -25,7 +25,7 @@ jobs:
           ssh root@38.242.214.198 "
             cd /var/www/shina-mix-landing/back &&
             git pull origin main &&
-            npm install --production &&
-            npm run build &&
+            /root/.nvm/versions/node/v20.18.1/bin/npm install --production &&
+            /root/.nvm/versions/node/v20.18.1/bin/npm run build &&
             pm2 restart strapi
           "
