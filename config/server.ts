@@ -23,6 +23,6 @@ export default ({ env }) => ({
   },
 
   admin: {
-    url: env('ADMIN_URL', 'https://shinamix.com/admin'),
+    url: '/admin',
   },
 });
