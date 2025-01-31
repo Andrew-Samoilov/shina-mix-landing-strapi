@@ -23,10 +23,12 @@ jobs:
       - name: Deploy and Restart Services
         run: |
           ssh root@38.242.214.198 "
-             export NVM_DIR=~/.nvm;
+            export NVM_DIR=~/.nvm;
             source ~/.nvm/nvm.sh;
             export PATH=/root/.nvm/versions/node/v20.18.1/bin:$PATH;
             cd /var/www/shina-mix-landing/back &&
+            git reset --hard origin/main &&
+            git clean -fd 
             git pull origin main &&
             npm install --omit=dev &&
             npm run build &&
