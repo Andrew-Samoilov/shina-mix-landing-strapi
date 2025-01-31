@@ -18,4 +18,11 @@ export default ({ env }) => ({
 
   url: env('PUBLIC_URL', 'https://shinamix.com'),
   
+  dirs: {
+    public: './public',
+  },
+
+  admin: {
+    url: env('ADMIN_URL', 'https://shinamix.com/admin'),
+  },
 });
