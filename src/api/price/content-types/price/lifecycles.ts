@@ -44,4 +44,11 @@ export default {
             strapi.log.error(`Помилка при надсиланні email для Price, ID: ${result.id}`, error);
         }
     },
+
+    beforeCreate(event) {
+        const { result } = event;
+        if (result.name === 'RobertSpope') {
+            throw new Error("Це ім'я заборонено!");
+        }
+    },
 };
