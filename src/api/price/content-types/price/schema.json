@@ -27,6 +27,10 @@
     },
     "added": {
       "type": "boolean"
+    },
+    "recaptcha": {
+      "type": "string",
+      "required": false
     }
   }
 }
