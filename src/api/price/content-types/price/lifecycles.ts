@@ -45,10 +45,17 @@ export default {
         }
     },
 
-    beforeCreate(event) {
-        const { result } = event;
-        if (result.name === 'RobertSpope') {
+    beforeCreate({ params: { data } }) {
+        if (!data?.name) {
+            strapi.log.warn('Lifecycle Hook "beforeCreate": відсутнє поле name')
+            return
+        };
+        
+        if (data.name === 'RobertSpope') {
+            strapi.log.error('Lifecycle Hook "beforeCreate": це ім\'я заборонено');
             throw new Error("Це ім'я заборонено!");
         }
-    },
+        strapi.log.info(`Lifecycle Hook "beforeCreate" викликаний для Price: ${data.name}`);
+    }
+
 };
