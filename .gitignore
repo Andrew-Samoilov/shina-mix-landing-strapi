@@ -131,3 +131,4 @@ build
 .strapi-cloud.json
 node_modules
 .tmp/data.db
+/.tmp

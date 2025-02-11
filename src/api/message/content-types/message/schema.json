@@ -26,6 +26,10 @@
     "emailSent": {
       "type": "boolean",
       "default": false
+    },
+    "recaptcha": {
+      "type": "string",
+      "required": false
     }
   }
 }
