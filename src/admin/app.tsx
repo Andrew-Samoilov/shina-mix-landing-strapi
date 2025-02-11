@@ -61,7 +61,7 @@ export default {
         },
       });
 
-      console.log('✅ Strapi admin translations loaded.');
+      strapi.log.info('✅ Strapi admin translations loaded.');
     }
 
   }
