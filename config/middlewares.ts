@@ -5,9 +5,8 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      // origin: ['http://localhost:1337', 'https://shinamix.com'], 
-      origin: "*",
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      origin: ['http://localhost:1337', 'https://shinamix.com'], 
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
       credentials: true,
     },

@@ -22,13 +22,23 @@ const recaptchaMiddleware = async (ctx: any, next: () => Promise<void>) => {
         }
 
         console.log("🔹 Відправляємо reCAPTCHA на валідацію...");
-        const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptcha}`;
+        // const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptcha}`;
+        // const response = await fetch(verificationURL, { method: "POST" });
 
-        const response = await fetch(verificationURL, { method: "POST" });
+        const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({
+                secret: secretKey,
+                response: recaptcha,
+            }),
+        });
 
         if (!response.ok) {
-            console.error("❌ Google reCAPTCHA API не відповідає:", response.status, await response.text());
-            ctx.throw(500, "Помилка перевірки reCAPTCHA");
+            const errorText = await response.text();
+            console.error("❌ Google reCAPTCHA API не відповідає! Код:", response.status);
+            console.error("🔹 Відповідь сервера:", errorText);
+            ctx.throw(500, `Помилка перевірки reCAPTCHA: ${errorText}`);
         }
 
         const data = (await response.json()) as RecaptchaResponse;

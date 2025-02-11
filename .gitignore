@@ -132,3 +132,4 @@ build
 node_modules
 .tmp/data.db
 /.tmp
+.tmp/data.db
